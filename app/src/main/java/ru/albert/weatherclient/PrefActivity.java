@@ -1,17 +1,26 @@
 package ru.albert.weatherclient;
 
 import android.app.Activity;
+import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.List;
 
 public class PrefActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,12 +30,19 @@ public class PrefActivity extends AppCompatActivity {
         List<String> cityesList = Arrays.asList(cityes);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, cityesList);
         autoCompleteTextView.setAdapter(adapter);
+        autoCompleteTextView.setTextColor(Color.WHITE);
+        TextView view = findViewById(R.id.textView10);
+        view.setTextColor(Color.WHITE);
         Activity activity = this;
         autoCompleteTextView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View arg1, int position, long arg3) {
                 Object item = parent.getItemAtPosition(position);
-                weatherGetter.getWeather(MainActivity.textView, citySearch.getURL(item.toString()));
+                weatherGetter.getWeather(MainActivity.textView, item.toString());
+                SharedPreferences.Editor ed = MainActivity.sPref.edit();
+                ed.putBoolean("isFirst", false);
+                ed.putString("cityName", item.toString());
+                ed.commit();
                 activity.finish();
             }
         });
