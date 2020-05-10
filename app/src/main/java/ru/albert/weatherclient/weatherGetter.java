@@ -65,7 +65,7 @@ public class weatherGetter {
         String arr1[] = arr[1].split("Барометр");
         str[1] = "Ощущается" + arr1[0];
         String arr2[] = arr1[1].split("Точка");
-        str[2] = "Барометр" + arr2[0];
+        str[2] = "Давление" + arr2[0];
         String arr3[] = arr2[1].split("От. влажность");
         str[3] = "Точка" + arr3[0];
         String arr4[] = arr3[1].split("Видимость");
