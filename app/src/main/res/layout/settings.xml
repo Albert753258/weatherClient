@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     tools:context="ru.albert.weatherclient.MainActivity">
 
-    <AutoCompleteTextView
+    <ru.albert.weatherclient.InstantAutoComplete
         android:id="@+id/autoCompleteTextView"
         android:layout_width="400dp"
         android:layout_height="60dp"

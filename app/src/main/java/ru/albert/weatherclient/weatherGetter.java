@@ -42,6 +42,16 @@ public class weatherGetter {
             }
             @Override
             protected void onPostExecute(Void result) {
+                if(weather.equals("Ошибка")){
+                    view.setText("Ошибка");
+                    MainActivity.weatherView.setText("Ошибка");
+                    MainActivity.weatherView1.setText("");
+                    MainActivity.weatherView2.setText("");
+                    MainActivity.weatherView3.setText("");
+                    MainActivity.weatherView4.setText("");
+                    MainActivity.weatherView5.setText("");
+                    return;
+                }
                 String arr[] = weatherAnalyzer(weather);
                 MainActivity.weatherView.setText(arr[0]);
                 MainActivity.weatherView1.setText(arr[1]);
@@ -51,7 +61,6 @@ public class weatherGetter {
                 MainActivity.weatherView5.setText(arr[5]);
                 super.onPostExecute(result);
                 view.setText(temperature);
-                //MainActivity.weatherView.setText(weather);
             }
         }
         InternetDownloader downloader = new InternetDownloader();

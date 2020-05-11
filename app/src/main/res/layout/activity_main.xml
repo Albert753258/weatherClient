@@ -40,7 +40,6 @@
         android:id="@+id/weather"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:text="Загрузка..."
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -49,7 +48,6 @@
         android:id="@+id/weather1"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:text="Загрузка..."
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/weather" />
@@ -58,7 +56,6 @@
         android:id="@+id/weather2"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:text="Загрузка..."
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/weather1" />
@@ -67,7 +64,6 @@
         android:id="@+id/weather3"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:text="Загрузка..."
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/weather2" />
@@ -76,7 +72,6 @@
         android:id="@+id/weather4"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:text="Загрузка..."
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/weather3" />
@@ -85,7 +80,6 @@
         android:id="@+id/weather5"
         android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:text="Загрузка..."
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/weather4" />

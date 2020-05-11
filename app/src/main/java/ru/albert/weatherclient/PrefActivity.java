@@ -26,7 +26,7 @@ public class PrefActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings);
         String[] cityes = {"Москва", "Санкт-Петербург", "Новосибирск", "Екатеринбург", "Нижний Новгород", "Казань", "Челябинск", "Омск", "Самара", "Ростов-на-Дону"};
-        AutoCompleteTextView autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
+        InstantAutoComplete autoCompleteTextView = findViewById(R.id.autoCompleteTextView);
         List<String> cityesList = Arrays.asList(cityes);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, cityesList);
         autoCompleteTextView.setAdapter(adapter);
