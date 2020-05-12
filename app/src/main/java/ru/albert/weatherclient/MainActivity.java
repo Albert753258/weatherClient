@@ -19,20 +19,28 @@ public class MainActivity extends AppCompatActivity {
     public static TextView weatherView3;
     public static TextView weatherView4;
     public static TextView weatherView5;
+    public static TextView weatherView6;
+    public static TextView date;
+    public static TextView weatherView7;
+    public static TextView weatherView8;
     public static String cityName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         citySearch.inicialyze();
-        textView = findViewById(R.id.textView);
-        dateAndCity = findViewById(R.id.dateAndCity);
+        textView = findViewById(R.id.textView2);
+        dateAndCity = findViewById(R.id.city);
         weatherView = findViewById(R.id.weather);
         weatherView1 = findViewById(R.id.weather1);
         weatherView2= findViewById(R.id.weather2);
         weatherView3 = findViewById(R.id.weather3);
         weatherView4 = findViewById(R.id.weather4);
         weatherView5 = findViewById(R.id.weather5);
+        date = findViewById(R.id.date);
+        weatherView6 = findViewById(R.id.textView);
+        weatherView7 = findViewById(R.id.textView3);
+        weatherView8 = findViewById(R.id.textView4);
         dateAndCity.setTextColor(Color.WHITE);
         weatherView1.setTextColor(Color.WHITE);
         weatherView2.setTextColor(Color.WHITE);

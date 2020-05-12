@@ -17,8 +17,8 @@ public class weatherGetter {
         String url = citySearch.getURL(cityName);
         Date currentDate = new Date();
         DateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy", Locale.getDefault());
-        String dateText = cityName + " " + dateFormat.format(currentDate);
-        MainActivity.dateAndCity.setText(dateText);
+        MainActivity.dateAndCity.setText(cityName);
+        MainActivity.date.setText(dateFormat.format(currentDate));
         class InternetDownloader extends AsyncTask<Void, Void, Void> {
             String temperature;
             String weather;
@@ -50,6 +50,9 @@ public class weatherGetter {
                     MainActivity.weatherView3.setText("");
                     MainActivity.weatherView4.setText("");
                     MainActivity.weatherView5.setText("");
+                    MainActivity.weatherView6.setText("");
+                    MainActivity.weatherView7.setText("");
+                    MainActivity.weatherView8.setText("");
                     return;
                 }
                 String arr[] = weatherAnalyzer(weather);
@@ -59,6 +62,9 @@ public class weatherGetter {
                 MainActivity.weatherView3.setText(arr[3]);
                 MainActivity.weatherView4.setText(arr[4]);
                 MainActivity.weatherView5.setText(arr[5]);
+                MainActivity.weatherView6.setText(arr[6]);
+                MainActivity.weatherView7.setText(arr[7]);
+                MainActivity.weatherView8.setText(arr[8]);
                 super.onPostExecute(result);
                 view.setText(temperature);
             }
@@ -68,7 +74,7 @@ public class weatherGetter {
         int o = 0;
     }
     public static String[] weatherAnalyzer(String weather){
-        String str[] = new String[6];
+        String str[] = new String[9];
         String arr[] = weather.split("Ощущается");
         str[0] = arr[0];
         String arr1[] = arr[1].split("Барометр");
@@ -81,6 +87,11 @@ public class weatherGetter {
         str[4] = "От. влажность" + arr4[0];
         String arr5[] = arr4[1].split("Восход");
         str[5] = "Видимость" + arr5[0];
+        String arr6[] = arr5[1].split("Закат");
+        str[6] = "Восход" + arr6[0];
+        String arr7[] = arr6[1].split("Долгота");
+        str[7] = "Закат" + arr7[0];
+        str[8] = "Долгота" + arr7[1];
         System.out.println(str);
         return str;
     }
