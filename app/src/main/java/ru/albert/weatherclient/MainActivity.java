@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextClock;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,14 +22,16 @@ public class MainActivity extends AppCompatActivity {
     public static TextView weatherView5;
     public static TextView weatherView6;
     public static TextView date;
+    public static TextView view;
     public static TextView weatherView7;
     public static TextView weatherView8;
+    //TextView textViews[] = {weatherView, weatherView1, weatherView2, weatherView3, weatherView4, weatherView5, weatherView6, weatherView7, weatherView8};
     public static String cityName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        citySearch.inicialyze();
+        view = findViewById(R.id.textView5);
         textView = findViewById(R.id.textView2);
         dateAndCity = findViewById(R.id.city);
         weatherView = findViewById(R.id.weather);
@@ -57,7 +60,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
         cityName = cityName();
-        String url = citySearch.getURL(cityName);
         weatherGetter.getWeather(MainActivity.textView, cityName);
     }
 
